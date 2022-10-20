@@ -5,12 +5,14 @@ import { BrowserModule } from '@angular/platform-browser';
 // routing
 import { AppRoutingModule } from './app-routing.module';
 
-//components
-import { AppComponent } from './app.component';
+// shared
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { PortfolioComponent } from './pages/portfolio/portfolio.component';
+
+//components
 import { AboutComponent } from './pages/about/about.component';
+import { AppComponent } from './app.component';
+import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { ProjectComponent } from './pages/project/project.component';
 
 @NgModule({
