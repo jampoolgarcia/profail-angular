@@ -15,6 +15,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { AppComponent } from './app.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { ProjectComponent } from './pages/project/project.component';
+import { LoadingComponent } from './shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ProjectComponent } from './pages/project/project.component';
     FooterComponent,
     PortfolioComponent,
     AboutComponent,
-    ProjectComponent
+    ProjectComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

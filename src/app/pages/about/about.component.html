@@ -1,13 +1,21 @@
 <div class="ae-grid au-xs-ta-center au-mb-4">
-  <div *ngFor="let item of equipo" class="animate__animated animate__fadeIn ae-grid__item item-lg-4 ae-kappa au-mb-3">
-    <img [src]="item.url" alt="" class="au-mb-3">
-    <h5 class="ae-u-bolder au-mt-2">{{ item.nombre }}</h5>
-    <p class="ae-u-bolder au-mb-3">{{ item.titulo }}</p>
-    <p class="au-lg-ta-left au-mb-3 au-pl-4 au-pr-4">
-      {{ item.frase }}
-    </p>
-    <a href="#0" class="ae-u-bolder au-underline">{{ item.twitter }}</a>
-  </div>
+
+  <ng-container *ngIf="loadding; else elseTemplate">
+    <app-loading></app-loading>
+  </ng-container>
+
+  <ng-template #elseTemplate>
+    <div *ngFor="let item of equipo" class="animate__animated animate__fadeIn ae-grid__item item-lg-4 ae-kappa au-mb-3">
+      <img [src]="item.url" alt="" class="au-mb-3">
+      <h5 class="ae-u-bolder au-mt-2">{{ item.nombre }}</h5>
+      <p class="ae-u-bolder au-mb-3">{{ item.titulo }}</p>
+      <p class="au-lg-ta-left au-mb-3 au-pl-4 au-pr-4">
+        {{ item.frase }}
+      </p>
+      <a href="#0" class="ae-u-bolder au-underline">{{ item.twitter }}</a>
+    </div>
+  </ng-template>
+  
   <!-- <div class="animate__animated animate__fadeIn ae-grid__item item-lg-4 ae-kappa au-mb-3"><img src="assets/img/team-2.jpg" alt="" class="au-mb-3">
     <h5 class="ae-u-bolder au-mt-2">Angelina B. Widow</h5>
     <p class="ae-u-bolder au-mb-3">Founder / CEO</p>

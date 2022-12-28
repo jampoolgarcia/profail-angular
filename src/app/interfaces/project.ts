@@ -8,3 +8,10 @@ export interface ProjectI {
   subtitulo2: string;
 }
 
+export interface ProjectIdxI {
+  categoria: string;
+  cod: string;
+  titulo: string;
+  url: string;
+}
+

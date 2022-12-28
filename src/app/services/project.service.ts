@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { ProjectI } from '../interfaces/project';
+import { ProjectI, ProjectIdxI } from '../interfaces/project';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class ProjectService {
   
   }
 
-  cargarProject(): Observable<ProjectI[]> {
-    return this._http.get<ProjectI[]>(`${environment.url}projects.json`);
+  cargarProject(): Observable<ProjectIdxI[]> {
+    return this._http.get<ProjectIdxI[]>(`${environment.url}projects_idx.json`);
   }
 }

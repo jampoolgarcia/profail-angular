@@ -11,13 +11,16 @@ import { InfoPaginaService } from 'src/app/services/info-pagina.service';
 export class AboutComponent implements OnInit {
 
   equipo!:Equipo[];
+  loadding = true;
 
   constructor(private _service: InfoPaginaService) { }
  
 
   ngOnInit(): void {
+    this.loadding = true;
      this._service.cargarEquipo().subscribe(res => {
       this.equipo = res;
+      this.loadding = false;
     });
   }
 
