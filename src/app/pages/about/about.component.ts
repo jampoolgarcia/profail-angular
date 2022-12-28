@@ -11,13 +11,12 @@ import { InfoPaginaService } from 'src/app/services/info-pagina.service';
 export class AboutComponent implements OnInit {
 
   equipo!:Equipo[];
-  sub!: Subscription;
 
   constructor(private _service: InfoPaginaService) { }
  
 
   ngOnInit(): void {
-     this.sub = this._service.cargarEquipo().subscribe(res => {
+     this._service.cargarEquipo().subscribe(res => {
       this.equipo = res;
     });
   }

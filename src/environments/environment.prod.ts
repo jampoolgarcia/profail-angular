@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  url: 'https://angular-profail-default-rtdb.firebaseio.com/'
 };

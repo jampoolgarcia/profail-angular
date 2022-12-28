@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Equipo } from '../interfaces/equipo';
 import { InfoPagina } from '../interfaces/info-pagina';
 
@@ -30,7 +31,7 @@ export class InfoPaginaService {
   }
 
   cargarEquipo(): Observable<Equipo[]>{
-    return this._http.get<Equipo[]>('https://angular-profail-default-rtdb.firebaseio.com/Equipo.json');
+    return this._http.get<Equipo[]>(`${environment.url}Equipo.json`);
   }
 
   getInfoPagina$(): Observable<InfoPagina> {
