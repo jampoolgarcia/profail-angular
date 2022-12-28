@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
+import { Equipo } from 'src/app/interfaces/equipo';
+import { InfoPaginaService } from 'src/app/services/info-pagina.service';
 
 @Component({
   selector: 'app-about',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  equipo!:Equipo[];
+  sub!: Subscription;
+
+  constructor(private _service: InfoPaginaService) { }
+ 
 
   ngOnInit(): void {
+     this.sub = this._service.cargarEquipo().subscribe(res => {
+      this.equipo = res;
+    });
   }
+
 
 }

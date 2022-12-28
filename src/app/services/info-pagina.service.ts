@@ -29,8 +29,8 @@ export class InfoPaginaService {
     });
   }
 
-  private cargarEquipo(): Observable<Equipo>{
-    return this._http.get<Equipo>('https://angular-profail-default-rtdb.firebaseio.com/Equipo.json');
+  cargarEquipo(): Observable<Equipo[]>{
+    return this._http.get<Equipo[]>('https://angular-profail-default-rtdb.firebaseio.com/Equipo.json');
   }
 
   getInfoPagina$(): Observable<InfoPagina> {
