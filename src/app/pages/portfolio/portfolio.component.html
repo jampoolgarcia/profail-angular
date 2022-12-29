@@ -25,9 +25,9 @@
       
         <ng-container *ngIf="(projects | filter: filterBy:['titulo', 'categoria']).length > 0; else elseFilter">
           <a *ngFor="let project of projects | filter: filterBy:['titulo', 'categoria']"
-            [routerLink]="['project', project.cod]" class="rk-item ae-masonry__item">
+            [routerLink]="['/project', project.cod]" class="rk-item ae-masonry__item">
             <img src="assets/projects/{{project.url}}.jpg" alt="">
-            <div [routerLink]="['project', project.cod]" class="item-meta">
+            <div [routerLink]="['/project', project.cod]" class="item-meta">
               <h2>{{ project.titulo }}</h2>
               <p>{{ project.categoria }}</p>
             </div>

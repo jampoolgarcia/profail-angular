@@ -9,14 +9,17 @@ import { ProjectComponent } from './pages/project/project.component';
 
 const routes: Routes = [
   { path:'home', component: PortfolioComponent },
+  { path:'project/:id', component: ProjectComponent },
   { path:'home/:search', component: PortfolioComponent },
   { path:'about', component: AboutComponent },
-  { path:'project/:id', component: ProjectComponent },
+  
   { path:'**', pathMatch:'full', redirectTo: 'home' }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
+
+  
 })
 export class AppRoutingModule { }
