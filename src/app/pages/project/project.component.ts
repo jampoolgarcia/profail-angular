@@ -11,6 +11,8 @@ import { ProjectService } from 'src/app/services/project.service';
 export class ProjectComponent implements OnInit {
 
   project!: ProjectI;
+  id!: string;
+  loadding = true;
 
   constructor(
     private _router: ActivatedRoute,
@@ -18,11 +20,14 @@ export class ProjectComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    this.loadding = true;
     this._router.params
       .subscribe(res => {
-        this._service.getProject(res['id'])
+        this.id = res['id']
+        this._service.getProject(this.id)
           .subscribe((proj:ProjectI) => {
               this.project = proj;
+              this.loadding = false;
           });
     });
   }
