@@ -25,9 +25,7 @@ export class HeaderComponent implements OnInit {
   }
 
   searchProject(search: string){
-    if(search.length < 2) return;
-
-    this._router.navigate(['/search', search]);
+    this._router.navigate(['/home', search]);
   }
 
 }

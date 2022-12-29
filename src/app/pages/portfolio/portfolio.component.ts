@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ProjectIdxI } from 'src/app/interfaces/project';
 import { ProjectService } from 'src/app/services/project.service';
 
@@ -11,8 +12,10 @@ export class PortfolioComponent implements OnInit {
 
   projects: ProjectIdxI[] = [];
   loadding = true;
+  filterBy = '';
 
-  constructor(private _service: ProjectService) { 
+  constructor(private _service: ProjectService, 
+              private _route: ActivatedRoute) { 
     
   }
 
@@ -21,6 +24,11 @@ export class PortfolioComponent implements OnInit {
     this._service.cargarProject().subscribe(res => {
       this.projects = res;
       this.loadding = false;
+    });
+
+    this._route.params
+    .subscribe((params) =>{
+      this.filterBy = params['search'];
     });
   }
 

@@ -16,7 +16,7 @@ import { AppComponent } from './app.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { ProjectComponent } from './pages/project/project.component';
 import { LoadingComponent } from './shared/loading/loading.component';
-import { SearchComponent } from './pages/search/search.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import { SearchComponent } from './pages/search/search.component';
     AboutComponent,
     ProjectComponent,
     LoadingComponent,
-    SearchComponent
+    FilterPipe
   ],
   imports: [
     BrowserModule,
